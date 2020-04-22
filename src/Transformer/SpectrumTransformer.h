@@ -12,7 +12,6 @@
 
 #include "Domain/Settings.h"
 #include "Transformer/GenericTransformer.h"
-#include "Writer/MemoryWriter.h"
 #include <fftw3.h>
 
 namespace vis

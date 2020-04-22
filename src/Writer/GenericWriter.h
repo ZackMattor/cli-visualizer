@@ -1,5 +1,5 @@
 /*
- * GenericWriter.cpp
+ * GenericWriter.h
  *
  * Created on: Apr 21, 2020
  *     Author: Zack Mattor
@@ -16,7 +16,7 @@ namespace vis
 class GenericWriter
 {
   public:
-    explicit GenericWriter();
+    GenericWriter();
 
     GenericWriter(const GenericWriter &) = delete;
 
@@ -26,7 +26,7 @@ class GenericWriter
 
     GenericWriter &operator=(const GenericWriter &&) = delete;
 
-    virtual ~GenericWriter();
+    virtual ~GenericWriter() = default;
 
     virtual void write(int32_t row, int32_t column, ColorDefinition color,
                        const std::wstring &msg, wchar_t character);

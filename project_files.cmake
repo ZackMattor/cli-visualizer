@@ -10,7 +10,6 @@ SET( VIS_PROJECT_HEADER_FILES
     ${CMAKE_SOURCE_DIR}/src/Source/PulseAudioSource.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/EllipseTransformer.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/GenericTransformer.h
-    ${CMAKE_SOURCE_DIR}/src/Transformer/GenericWriter.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/LorenzTransformer.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/SpectrumCircleTransformer.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/SpectrumTransformer.h
@@ -19,6 +18,7 @@ SET( VIS_PROJECT_HEADER_FILES
     ${CMAKE_SOURCE_DIR}/src/Utils/NcursesUtils.h
     ${CMAKE_SOURCE_DIR}/src/Utils/Utils.h
     ${CMAKE_SOURCE_DIR}/src/Visualizer.h
+    ${CMAKE_SOURCE_DIR}/src/Writer/GenericWriter.h
     ${CMAKE_SOURCE_DIR}/src/Writer/MemoryWriter.h
     ${CMAKE_SOURCE_DIR}/src/Writer/NcursesWriter.h
 )
@@ -41,6 +41,7 @@ SET( VIS_PROJECT_SOURCE_FILES
     ${CMAKE_SOURCE_DIR}/src/Utils/Utils.cpp
     ${CMAKE_SOURCE_DIR}/src/vis.cpp
     ${CMAKE_SOURCE_DIR}/src/Visualizer.cpp
+    ${CMAKE_SOURCE_DIR}/src/Writer/GenericWriter.cpp
     ${CMAKE_SOURCE_DIR}/src/Writer/MemoryWriter.cpp
     ${CMAKE_SOURCE_DIR}/src/Writer/NcursesWriter.cpp
 )
