@@ -9,7 +9,7 @@
 #define _VIS_GENERIC_TRANSFORMER_H
 
 #include "Domain/VisTypes.h"
-#include "Writer/NcursesWriter.h"
+#include "Writer/GenericWriter.h"
 
 namespace vis
 {
@@ -30,9 +30,9 @@ class GenericTransformer
     virtual ~GenericTransformer() = default;
 
     virtual void execute_stereo(pcm_stereo_sample *buffer,
-                                vis::NcursesWriter *writer) = 0;
+                                vis::GenericWriter *writer) = 0;
     virtual void execute_mono(pcm_stereo_sample *buffer,
-                              vis::NcursesWriter *writer) = 0;
+                              vis::GenericWriter *writer) = 0;
 
     virtual void clear_colors() = 0;
 
@@ -54,7 +54,7 @@ class GenericTransformer
     virtual void
     recalculate_colors(size_t max, const std::vector<ColorDefinition> &colors,
                        std::vector<ColorDefinition> *precomputed_colors,
-                       const NcursesWriter *writer);
+                       const GenericWriter *writer);
 };
 } // namespace vis
 

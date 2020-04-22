@@ -34,9 +34,9 @@ class LorenzTransformer : public GenericTransformer
     ~LorenzTransformer() override;
 
     void execute_mono(pcm_stereo_sample *buffer,
-                      vis::NcursesWriter *writer) override;
+                      vis::GenericWriter *writer) override;
     void execute_stereo(pcm_stereo_sample *buffer,
-                        vis::NcursesWriter *writer) override;
+                        vis::GenericWriter *writer) override;
 
     void clear_colors() override
     {

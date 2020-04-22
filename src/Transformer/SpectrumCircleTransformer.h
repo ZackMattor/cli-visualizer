@@ -56,7 +56,7 @@ class SpectrumCircleTransformer : public SpectrumTransformer
     void draw_bars(const std::vector<double> &bars,
                    const std::vector<double> &bars_falloff, int32_t win_height,
                    bool flipped, const std::wstring &bar_row_msg,
-                   vis::NcursesWriter *writer) override;
+                   vis::GenericWriter *writer) override;
 
     /** --- END MEMBER FUNCTIONS --- */
 };

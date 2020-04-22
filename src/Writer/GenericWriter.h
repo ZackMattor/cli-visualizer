@@ -1,38 +1,32 @@
 /*
- * MemoryWriter.h
+ * GenericWriter.cpp
  *
  * Created on: Apr 21, 2020
  *     Author: Zack Mattor
  */
 
-#ifndef _MEMORY_WRITER_H
-#define _MEMORY_WRITER_H
+#ifndef _VIS_GENERIC_WRITER_H
+#define _VIS_GENERIC_WRITER_H
 
-#ifdef NCURSESW
-#include <ncursesw/ncurses.h>
-#else
-#include <ncurses.h>
-#endif
-
-#include "Writer/GenericWriter.h"
+#include "Domain/ColorDefinition.h"
 
 namespace vis
 {
 
-class MemoryWriter : public GenericWriter
+class GenericWriter
 {
   public:
-    explicit MemoryWriter();
+    explicit GenericWriter();
 
-    MemoryWriter(const MemoryWriter &) = delete;
+    GenericWriter(const GenericWriter &) = delete;
 
-    MemoryWriter(const MemoryWriter &&) = delete;
+    GenericWriter(const GenericWriter &&) = delete;
 
-    MemoryWriter &operator=(const MemoryWriter &) = delete;
+    GenericWriter &operator=(const GenericWriter &) = delete;
 
-    MemoryWriter &operator=(const MemoryWriter &&) = delete;
+    GenericWriter &operator=(const GenericWriter &&) = delete;
 
-    virtual ~MemoryWriter();
+    virtual ~GenericWriter();
 
     virtual void write(int32_t row, int32_t column, ColorDefinition color,
                        const std::wstring &msg, wchar_t character);
@@ -51,7 +45,7 @@ class MemoryWriter : public GenericWriter
     /**
      * Initialize color pairs for ncurses
      */
-    void setup_colors(bool is_override_terminal_colors,
+    virtual void setup_colors(bool is_override_terminal_colors,
                       const std::vector<ColorDefinition> &colors);
 
     virtual void flush();

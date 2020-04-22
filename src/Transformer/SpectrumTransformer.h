@@ -12,7 +12,7 @@
 
 #include "Domain/Settings.h"
 #include "Transformer/GenericTransformer.h"
-#include "Writer/NcursesWriter.h"
+#include "Writer/MemoryWriter.h"
 #include <fftw3.h>
 
 namespace vis
@@ -36,9 +36,9 @@ class SpectrumTransformer : public GenericTransformer
     ~SpectrumTransformer() override;
 
     void execute_mono(pcm_stereo_sample *buffer,
-                      vis::NcursesWriter *writer) override;
+                      vis::GenericWriter *writer) override;
     void execute_stereo(pcm_stereo_sample *buffer,
-                        vis::NcursesWriter *writer) override;
+                        vis::GenericWriter *writer) override;
 
     void clear_colors() override
     {
@@ -46,7 +46,7 @@ class SpectrumTransformer : public GenericTransformer
     }
 
   private:
-    void execute(pcm_stereo_sample *buffer, vis::NcursesWriter *writer,
+    void execute(pcm_stereo_sample *buffer, vis::GenericWriter *writer,
                  bool is_stereo);
     const std::shared_ptr<const Settings> m_settings;
 
@@ -181,7 +181,7 @@ class SpectrumTransformer : public GenericTransformer
                            const std::vector<double> &bars_falloff,
                            int32_t win_height, bool flipped,
                            const std::wstring &bar_row_msg,
-                           vis::NcursesWriter *writer);
+                           vis::GenericWriter *writer);
 
     /**
      * Scaling the given vector of points "bars" to a fit a screen with a window

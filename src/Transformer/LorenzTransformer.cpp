@@ -59,14 +59,14 @@ vis::LorenzTransformer::LorenzTransformer(
 vis::LorenzTransformer::~LorenzTransformer() = default;
 
 void vis::LorenzTransformer::execute_mono(pcm_stereo_sample *buffer,
-                                          vis::NcursesWriter *writer)
+                                          vis::GenericWriter *writer)
 {
     // TODO(dpayne): do something different for mono
     execute_stereo(buffer, writer);
 }
 
 void vis::LorenzTransformer::execute_stereo(pcm_stereo_sample *buffer,
-                                            vis::NcursesWriter *writer)
+                                            vis::GenericWriter *writer)
 {
     const auto win_height = NcursesUtils::get_window_height();
     const auto half_height = win_height / 2;

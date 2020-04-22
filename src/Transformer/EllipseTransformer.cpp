@@ -31,7 +31,7 @@ vis::EllipseTransformer::EllipseTransformer(
 vis::EllipseTransformer::~EllipseTransformer() = default;
 
 void vis::EllipseTransformer::execute_mono(pcm_stereo_sample *buffer,
-                                           vis::NcursesWriter *writer)
+                                           vis::GenericWriter *writer)
 {
     // TODO(dpayne): do something different for mono
     execute_stereo(buffer, writer);
@@ -40,7 +40,7 @@ void vis::EllipseTransformer::execute_mono(pcm_stereo_sample *buffer,
 void vis::EllipseTransformer::recalculate_colors(
     const size_t max, const std::vector<ColorDefinition> &colors,
     std::vector<ColorDefinition> *precomputed_colors,
-    const NcursesWriter *writer)
+    const GenericWriter *writer)
 {
     // Makes the radius of each ring be approximately 2 cells wide.
     const auto radius = static_cast<int32_t>(m_settings->get_ellipse_radius() *
@@ -58,7 +58,7 @@ void vis::EllipseTransformer::recalculate_colors(
 }
 
 void vis::EllipseTransformer::execute_stereo(pcm_stereo_sample *buffer,
-                                             vis::NcursesWriter *writer)
+                                             vis::GenericWriter *writer)
 {
     const auto win_height = NcursesUtils::get_window_height();
     const auto win_width = NcursesUtils::get_window_width();

@@ -10,6 +10,7 @@ SET( VIS_PROJECT_HEADER_FILES
     ${CMAKE_SOURCE_DIR}/src/Source/PulseAudioSource.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/EllipseTransformer.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/GenericTransformer.h
+    ${CMAKE_SOURCE_DIR}/src/Transformer/GenericWriter.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/LorenzTransformer.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/SpectrumCircleTransformer.h
     ${CMAKE_SOURCE_DIR}/src/Transformer/SpectrumTransformer.h

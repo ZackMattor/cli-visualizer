@@ -13,6 +13,7 @@
 #include <vector>
 
 #include "Domain/VisTypes.h"
+#include "Writer/MemoryWriter.h"
 #include "Writer/NcursesWriter.h"
 
 namespace VisConstants

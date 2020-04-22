@@ -90,11 +90,11 @@ bool vis::SpectrumTransformer::prepare_fft_input(pcm_stereo_sample *buffer,
 }
 
 void vis::SpectrumTransformer::execute(pcm_stereo_sample *buffer,
-                                       vis::NcursesWriter *writer,
+                                       vis::GenericWriter *writer,
                                        const bool is_stereo)
 {
-    const auto win_height = NcursesUtils::get_window_height();
-    const auto win_width = NcursesUtils::get_window_width();
+    const auto win_height = 16;//NcursesUtils::get_window_height();
+    const auto win_width = 32;//NcursesUtils::get_window_width();
 
     auto right_margin = static_cast<int32_t>(
         m_settings->get_spectrum_right_margin() * win_width);
@@ -213,13 +213,13 @@ void vis::SpectrumTransformer::execute(pcm_stereo_sample *buffer,
 }
 
 void vis::SpectrumTransformer::execute_stereo(pcm_stereo_sample *buffer,
-                                              vis::NcursesWriter *writer)
+                                              vis::GenericWriter *writer)
 {
     execute(buffer, writer, true);
 }
 
 void vis::SpectrumTransformer::execute_mono(pcm_stereo_sample *buffer,
-                                            vis::NcursesWriter *writer)
+                                            vis::GenericWriter *writer)
 {
     execute(buffer, writer, false);
 }
@@ -496,7 +496,7 @@ void vis::SpectrumTransformer::create_spectrum_bars(
 void vis::SpectrumTransformer::draw_bars(
     const std::vector<double> &bars, const std::vector<double> &bars_falloff,
     int32_t win_height, const bool flipped, const std::wstring &bar_row_msg,
-    vis::NcursesWriter *writer)
+    vis::GenericWriter *writer)
 {
     recalculate_colors(static_cast<size_t>(win_height),
                        m_settings->get_colors(), &m_precomputed_colors, writer);

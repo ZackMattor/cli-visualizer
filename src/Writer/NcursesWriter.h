@@ -14,12 +14,12 @@
 #include <ncurses.h>
 #endif
 
-#include "Domain/ColorDefinition.h"
+#include "Writer/GenericWriter.h"
 
 namespace vis
 {
 
-class NcursesWriter
+class NcursesWriter : public GenericWriter
 {
   public:
     explicit NcursesWriter();

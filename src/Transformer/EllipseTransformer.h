@@ -34,9 +34,9 @@ class EllipseTransformer : public GenericTransformer
     ~EllipseTransformer() override;
 
     void execute_mono(pcm_stereo_sample *buffer,
-                      vis::NcursesWriter *writer) override;
+                      vis::GenericWriter *writer) override;
     void execute_stereo(pcm_stereo_sample *buffer,
-                        vis::NcursesWriter *writer) override;
+                        vis::GenericWriter *writer) override;
 
     void clear_colors() override
     {
@@ -52,7 +52,7 @@ class EllipseTransformer : public GenericTransformer
     void recalculate_colors(size_t max,
                             const std::vector<ColorDefinition> &colors,
                             std::vector<ColorDefinition> *precomputed_colors,
-                            const NcursesWriter *writer) override;
+                            const GenericWriter *writer) override;
 
   private:
     const std::shared_ptr<const Settings> m_settings;

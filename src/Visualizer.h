@@ -12,7 +12,7 @@
 #include "Domain/VisTypes.h"
 #include "Source/AudioSource.h"
 #include "Transformer/GenericTransformer.h"
-#include "Writer/NcursesWriter.h"
+#include "Writer/GenericWriter.h"
 #include <locale>
 #include <memory>
 
@@ -55,7 +55,7 @@ class Visualizer
 
     size_t m_current_transformer_index;
 
-    std::unique_ptr<vis::NcursesWriter> m_writer;
+    std::unique_ptr<vis::GenericWriter> m_writer;
 
     std::unique_ptr<AudioSource> m_audio_source;
 

@@ -25,7 +25,7 @@ vis::SpectrumCircleTransformer::SpectrumCircleTransformer(
 void vis::SpectrumCircleTransformer::draw_bars(
     const std::vector<double> &bars, const std::vector<double> &bars_falloff,
     int32_t win_height, const bool flipped, const std::wstring &bar_row_msg,
-    vis::NcursesWriter *writer)
+    vis::GenericWriter *writer)
 {
     const auto half_height = win_height / 2.0;
     const auto half_width = NcursesUtils::get_window_width() / 2.0;
