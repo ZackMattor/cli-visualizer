@@ -18,6 +18,7 @@ SET( VIS_PROJECT_HEADER_FILES
     ${CMAKE_SOURCE_DIR}/src/Utils/NcursesUtils.h
     ${CMAKE_SOURCE_DIR}/src/Utils/Utils.h
     ${CMAKE_SOURCE_DIR}/src/Visualizer.h
+    ${CMAKE_SOURCE_DIR}/src/Writer/MemoryWriter.h
     ${CMAKE_SOURCE_DIR}/src/Writer/NcursesWriter.h
 )
 
@@ -39,6 +40,7 @@ SET( VIS_PROJECT_SOURCE_FILES
     ${CMAKE_SOURCE_DIR}/src/Utils/Utils.cpp
     ${CMAKE_SOURCE_DIR}/src/vis.cpp
     ${CMAKE_SOURCE_DIR}/src/Visualizer.cpp
+    ${CMAKE_SOURCE_DIR}/src/Writer/MemoryWriter.cpp
     ${CMAKE_SOURCE_DIR}/src/Writer/NcursesWriter.cpp
 )
 
